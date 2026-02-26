@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Duarte Abogados Panamá — Lic. Israel Duarte, farmacéutico y abogado litigante en Panamá. Atención cercana y profesional en Derecho Civil, Familia, Penal Migratorio y Trámite de Registros Sanitarios." />
+  <title>Duarte Abogados | Lic. Israel Duarte - Abogado litigante en Panamá</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Duarte Abogados | Lic. Israel Duarte" />
+  <meta property="og:description" content="Atención cercana y profesional. Derecho Civil, Familia, Penal y Trámite de Registros Sanitarios en Panamá." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #070B14;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.12);
+      --brand: #D6B15E;          /* dorado sutil */
+      --brand2:#7AA8FF;          /* acento frío */
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1100px 700px at 75% 10%, rgba(122,168,255,.18), transparent 55%),
+        radial-gradient(1000px 650px at 10% 0%, rgba(214,177,94,.14), transparent 52%),
+        radial-gradient(900px 650px at 50% 95%, rgba(122,168,255,.10), transparent 50%),
+        var(--bg);
+    }
+
+    a{color:inherit}
+    .container{max-width: var(--max); margin: 0 auto; padding: 0 20px;}
+
+    /* Nav */
+    .nav{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(7,11,20,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; flex-direction:column; line-height:1.05;
+    }
+    .brand strong{font-size: 14px; letter-spacing:.2px}
+    .brand span{font-size: 12px; color: var(--muted)}
+
+    /* Logo + brand top row */
+    .brand-top{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:28px;
+      height:28px;
+      border-radius: 10px;
+      border: 1px solid rgba(214,177,94,.35);
+      background: rgba(214,177,94,.10);
+      color: rgba(255,255,255,.92);
+    }
+
+    .nav-links{display:flex; align-items:center; gap: 14px;}
+    .nav-links a{
+      text-decoration:none;
+      font-size: 14px;
+      color: var(--muted);
+      padding: 10px 10px;
+      border-radius: 12px;
+    }
+    .nav-links a:hover{background: rgba(255,255,255,.06); color: var(--text);}
+    .nav-cta{
+      display:flex; align-items:center; gap:10px;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size: 14px;
+      box-shadow: none;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18);}
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(214,177,94,.95), rgba(214,177,94,.70));
+      border-color: rgba(214,177,94,.45);
+      color: #17120A;
+    }
+    .btn-primary:hover{background: linear-gradient(135deg, rgba(214,177,94,1), rgba(214,177,94,.75));}
+
+    /* Mobile menu */
+    .burger{display:none;}
+    @media (max-width: 860px){
+      .nav-links{display:none;}
+      .burger{display:inline-flex;}
+      .nav-cta{gap:8px}
+    }
+    .mobile{
+      display:none;
+      padding: 0 0 14px 0;
+    }
+    .mobile a{
+      display:block;
+      text-decoration:none;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      margin-top: 10px;
+    }
+    .mobile a:hover{color: var(--text); background: rgba(255,255,255,.07);}
+    .mobile.show{display:block;}
+
+    /* Hero */
+    .hero{padding: 46px 0 26px;}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    h1{
+      margin: 14px 0 8px;
+      font-size: 44px;
+      letter-spacing: -0.8px;
+      line-height: 1.05;
+    }
+    .subtitle{
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .hero-actions{display:flex; gap: 12px; flex-wrap: wrap;}
+    .trust{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+      max-width: 560px;
+    }
+    .trust .pill{
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .portrait{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+    }
+    .portrait img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .portrait .cap{
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+
+    @media (max-width: 860px){
+      h1{font-size: 36px;}
+      .hero-grid{grid-template-columns: 1fr; }
+      .portrait{order: -1;}
+    }
+
+    /* Sections */
+    section{padding: 26px 0;}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing:-0.3px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height:1.6;
+      font-size: 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 14px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns: repeat(2, minmax(0,1fr));} }
+    @media (max-width: 520px){ .grid{grid-template-columns: 1fr;} }
+
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+    .card strong{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-size: 15px;
+      letter-spacing: -0.2px;
+    }
+    .badge{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(214,177,94,.35);
+      background: rgba(214,177,94,.10);
+      color: rgba(255,255,255,.85);
+    }
+    .card p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items:start;
+    }
+    @media (max-width: 860px){ .contact{grid-template-columns: 1fr;} }
+
+    .contact .panel{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding: 16px;
+    }
+    .list{
+      margin: 12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .list a{color: var(--text); text-decoration:none}
+    .list a:hover{text-decoration: underline}
+
+    form{
+      display:grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    label{font-size: 13px; color: var(--muted)}
+    input, textarea{
+      width:100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(7,11,20,.35);
+      color: var(--text);
+      padding: 12px 12px;
+      outline:none;
+      font: inherit;
+    }
+    textarea{min-height: 120px; resize: vertical;}
+    input:focus, textarea:focus{border-color: rgba(122,168,255,.55); box-shadow: 0 0 0 4px rgba(122,168,255,.12);}
+
+    .footer{
+      padding: 24px 0 40px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 26px;
+      font-size: 13px;
+    }
+    .footer-inner{
+      display:flex; justify-content:space-between; gap: 12px; flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand" aria-label="Marca">
+          <div class="brand-top">
+            <span class="logo" aria-hidden="true">
+              <!-- Ícono justicia (SVG) -->
+              <svg viewBox="0 0 64 64" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 6v44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M18 18h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M18 18l-9 18h18l-9-18Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M46 18l-9 18h18l-9-18Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M22 50h20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M16 58h32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <strong>Duarte Abogados</strong>
+          </div>
+          <span>Lic. Israel Duarte · Abogado litigante · Panamá</span>
+        </div>
+
+        <nav class="nav-links" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-primary" target="_blank" rel="noopener"
+             href="https://wa.me/50764757204?text=Hola%20Lic.%20Israel%20Duarte,%20quisiera%20hacer%20una%20consulta%20legal.">
+            📲 WhatsApp
+          </a>
+          <button class="btn burger" id="burger" type="button" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile" id="mobileMenu" aria-label="Menú móvil">
+        <a href="#inicio">🏠 Inicio</a>
+        <a href="#servicios">🧩 Servicios</a>
+        <a href="#contacto">📩 Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="inicio" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">⚖️ Abogado litigante · Panamá, República de Panamá</div>
+
+          <h1>Duarte Abogados</h1>
+
+          <p class="subtitle">
+            <strong style="color: rgba(255,255,255,.92);">Lic. Israel Duarte</strong> — Le acompaño con orientación clara,
+            trato respetuoso y una estrategia legal enfocada en su caso. Atención profesional en derecho civil, familia,
+            penal y trámite de registros sanitarios.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://wa.me/50764757204?text=Hola%20Lic.%20Israel%20Duarte,%20quisiera%20agendar%20una%20consulta.">
+              📲 Agendar por WhatsApp
+            </a>
+            <a class="btn" href="mailto:israelduarteabogado@gmail.com?subject=Consulta%20legal&body=Hola%20Lic.%20Israel%20Duarte,%0D%0A%0D%0AMi%20consulta%20es:%0D%0A">
+              ✉️ Enviar correo
+            </a>
+            <a class="btn" href="#contacto">📝 Dejar mensaje</a>
+          </div>
+
+          <div class="trust" role="list" aria-label="Puntos de confianza">
+            <div class="pill" role="listitem">✅ Atención personalizada</div>
+            <div class="pill" role="listitem">✅ Comunicación clara y oportuna</div>
+            <div class="pill" role="listitem">✅ Confidencialidad y profesionalismo</div>
+            <div class="pill" role="listitem">✅ Enfoque estratégico en litigios</div>
+          </div>
+        </div>
+
+        <div class="portrait" aria-label="Foto profesional">
+          <img src="Foto-Israel-Duarte.jpg" alt="Lic. Israel Duarte, abogado litigante en Panamá" />
+          <div class="cap">Asesoría y representación legal con enfoque claro y humano.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SERVICES -->
+  <section id="servicios">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Servicios</h2>
+          <p>Áreas principales de práctica. Si no ve su caso aquí, puede escribirme y le indico si puedo ayudarle.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <strong>⚖️ Derecho Civil <span class="badge">Asesoría + litigio</span></strong>
+          <p>Contratos, obligaciones, cobros y reclamaciones civiles. Le explico sus opciones y le represento según la necesidad del caso.</p>
+        </article>
+
+        <article class="card">
+          <strong>👨‍👩‍👧 Derecho de Familia <span class="badge">Acompañamiento</span></strong>
+          <p>Orientación y representación en asuntos familiares con trato humano, claridad y responsabilidad durante el proceso.</p>
+        </article>
+
+        <article class="card">
+          <strong>🏥 Trámite de Registros Sanitarios <span class="badge">Medicamentos y Dispositivos Médicos</span></strong>
+          <p>Soporte como farmacéutico y abogado en la preparación, revisión y seguimiento de trámites para registros sanitarios, cuidando requisitos y documentación.</p>
+        </article>
+
+        <article class="card">
+          <strong>🚔 Derecho Penal <span class="badge">Defensa</span></strong>
+          <p>Defensa y representación en procesos penales, con análisis del caso, preparación y estrategia para cada etapa.</p>
+        </article>
+
+	<article class="card">
+          <strong>🚔 Derecho Migratorio <span class="badge">Apoyo</span></strong>
+          <p>Representacion y trámite de procesos de regularizacion en Panamá.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Contacto</h2>
+          <p>¿Desea consultar su situación? Escríbame por WhatsApp o envíeme un mensaje. Le responderé a la brevedad.</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="panel">
+          <strong style="display:block; font-size:15px;">📌 Datos</strong>
+          <ul class="list">
+            <li>📲 WhatsApp: <a target="_blank" rel="noopener"
+              href="https://wa.me/50764757204?text=Hola%20Lic.%20Israel%20Duarte,%20quisiera%20hacer%20una%20consulta%20legal.">+507 6475-7204</a></li>
+            <li>✉️ Correo: <a href="mailto:israelduarteabogado@gmail.com">israelduarteabogado@gmail.com</a></li>
+            <li>📍 Ubicación: Panamá, República de Panamá</li>
+          </ul>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://wa.me/50764757204?text=Hola%20Lic.%20Israel%20Duarte,%20quisiera%20hacer%20una%20consulta%20legal.">
+              📲 WhatsApp
+            </a>
+            <a class="btn" href="mailto:israelduarteabogado@gmail.com?subject=Consulta%20legal">✉️ Correo</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <strong style="display:block; font-size:15px;">📝 Enviar mensaje</strong>
+
+          <!-- Netlify Forms -->
+          <form name="contacto" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contacto" />
+
+            <div>
+              <label for="nombre">Nombre y apellido</label>
+              <input id="nombre" name="nombre" autocomplete="name" required />
+            </div>
+
+            <div>
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input id="telefono" name="telefono" autocomplete="tel" required />
+            </div>
+
+            <div>
+              <label for="correo">Correo (opcional)</label>
+              <input id="correo" name="correo" type="email" autocomplete="email" />
+            </div>
+
+            <div>
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" required placeholder="Cuénteme brevemente su situación."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">📨 Enviar</button>
+            <small style="color: var(--muted); line-height:1.5;">
+              Nota: No comparta información sensible por este formulario. Si es urgente, prefiera WhatsApp.
+            </small>
+          </form>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>© <span id="year"></span> Duarte Abogados. Todos los derechos reservados.</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn" href="#inicio">↑ Volver arriba</a>
+            <a class="btn" target="_blank" rel="noopener"
+               href="https://wa.me/50764757204?text=Hola%20Lic.%20Israel%20Duarte,%20quisiera%20agendar%20una%20consulta.">📲 WhatsApp</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <script>
+    // Año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú móvil
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (burger) {
+      burger.addEventListener('click', () => mobileMenu.classList.toggle('show'));
+    }
+    // Cierra menú al tocar un link
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('show')));
+  </script>
+</body>
+</html>
